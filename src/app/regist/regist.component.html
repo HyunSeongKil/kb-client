@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>등록</h2>
+    <div class="row">
+        <div class="col">
+            <label for="parentKbId">부모 아이디</label>
+            <input type="text" id="parentKbId" name="parentKbId" class="form-control  " readonly value="{{parentKbId}}">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="sj">제목</label>
+            <input type="text" #sj id="sj" name="sj" class="form-control" autofocus>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="cn">내용</label>
+            <textarea #cn class="form-control" id="cn" name="cn" rows="10"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="url">참고 url</label>
+            <input type="url" #url id="url" name="url" class="form-control">
+        </div>
+    </div>
+    <div class="row text-right mt-1">
+        <div class="col-6">
+            <button type="button" class="btn btn-primary " (click)="regist()">등록</button>
+            <button type="button" class="btn btn-secondary " (click)="cancel()">취소</button>
+
+        </div>
+    </div>
+</div>

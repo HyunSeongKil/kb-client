@@ -2,10 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>KbClient</title>
+  <title>꼬꼬지(꼬리에 꼬리는 무는 지식)</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js" integrity="sha512-XHDcSyqhOoO2ocB7sKOCJEkUjw/pQCJViP1ynpy+EGh/LggzrP6U/V3a++LQTnZT7sCQKeHRyWHfhN2afjXjCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function jsVis(container, nodes, edges){
+      console.log(container, nodes, edges);
+
+      let nw = new vis.Network(container, {nodes:new vis.DataSet(nodes), edges:new vis.DataSet(edges)}, {});
+      nw.on('click', (properties)=>{
+        console.debug(properties);
+      });
+    }
+  </script>
 </head>
 <body>
   <app-root></app-root>

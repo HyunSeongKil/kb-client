@@ -1,0 +1,50 @@
+<div class="container">
+    <h2>상세조회</h2>
+    <div class="row">
+        <div class="col">
+            <label for="kbId">#</label>
+            <input type="text" id="kbId" name="kbId" class="form-control  " value="{{dto.kbId}}" readonly >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="parentKbId">부모 #</label>
+            <input type="text" id="parentKbId" name="parentKbId" class="form-control  " value="{{dto.parentKbId}}" readonly >
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="sj">제목</label>
+            <input type="text" id="sj" name="sj" class="form-control" value="{{dto.sj}}" readonly>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="cn">내용</label>
+            <textarea class="form-control" id="cn" name="cn" rows="10" readonly>{{dto.cn}}</textarea>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <label for="url">참고 url (새창으로 열림)                
+            </label>
+            <a href="{{dto.url}}" target="_blank">
+                <input type="url" class="form-control" value="{{dto.url}}" style="cursor: pointer;" title="새창으로 열림" readonly>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="row mt-1">
+        <div class="col-6 text-right">
+            <button type="button" class="btn btn-primary " (click)="regist()">등록</button>
+            <button type="button" class="btn btn-primary " (click)="updt()">수정</button>
+            <button type="button" class="btn btn-danger " (click)="delete()">삭제</button>
+            <button type="button" class="btn btn-secondary " (click)="list()">목록</button>
+
+        </div>
+    </div>
+
+    <app-list-sub [list]="subs" (detailLinkClicked)="detailLinkClicked($event)"></app-list-sub>
+
+</div>    

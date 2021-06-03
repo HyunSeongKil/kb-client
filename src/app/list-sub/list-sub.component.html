@@ -1,0 +1,25 @@
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="col-1">#</th>
+                <th class="col-1">부모#</th>
+                <th>제목</th>
+                <th class="col-3">등록일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of list">
+                <td>{{x.kbId}}</td>
+                <td>{{x.parentKbId}}</td>
+                <td>
+                    <a href="javascript:;" (click)="detail(x.kbId)">
+                        <span *ngIf="'N' == x.delYn">{{x.sj}}</span>
+                        <span *ngIf="'Y' == x.delYn">(삭제되었습니다.)</span>                            
+                    </a>
+                </td>
+                <td>{{x.registDt}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
