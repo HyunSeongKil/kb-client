@@ -13,7 +13,11 @@
 
       let nw = new vis.Network(container, {nodes:new vis.DataSet(nodes), edges:new vis.DataSet(edges)}, {});
       nw.on('click', (properties)=>{
-        console.debug(properties);
+        if(0 === properties.nodes.length){
+          return;
+        }
+
+        location.href = '../detail/' + properties.nodes[0];
       });
     }
   </script>
