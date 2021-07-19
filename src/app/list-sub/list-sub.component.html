@@ -18,7 +18,7 @@
                         <span *ngIf="'Y' == x.delYn">(삭제되었습니다.)</span>                            
                     </a>
                 </td>
-                <td>{{x.registDt}}</td>
+                <td>{{x.registDt|date:'yyyy-MM-dd HH:mm'}}</td>
             </tr>
         </tbody>
     </table>
